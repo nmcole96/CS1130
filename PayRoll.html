@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h4,h3 {font-family: "Georgia"}
+body, html {height: 100%}
+.bgimg {
+  background-image: url('/images/Untitled_design_3_.jpg');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+form {
+  background-color: black;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  }
+}
+</style>
+</head>
+
+<body>
+<!-- Nabar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="index.html" class="w3-bar-item w3-button"><b>N's Home</b></a>
+    <div class="w3-right w3-hide-small">
+    <a href="Converters.html" class="w3-bar-item w3-button">Converters</a>
+    <a href="Factorial.html" class="w3-bar-item w3-button">Factorial</a>
+    <a href="IncomeTax.html" class="w3-bar-item w3-button">Income Tax</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="bgimg w3-display-container w3-text-white">
+  <div class="w3-display-middle w3-xlarge">
+    <p><button onclick="document.getElementById('PayrollManagement').style.display='block'" class="w3-button w3-black w3-display-center">Payroll Manager</button></p>
+  </div>
+
+<form id="payrollForm">
+<div id="PayrollManagement" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+  <div class="w3-container w3-black w3-display-container">
+
+<span onclick="document.getElementById('PayrollManagement').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+<h2 class="w3-border-light-grey w3-full w3-center w3-animate-top">Payroll Management</h2>
+<hr class="w3-border-white" style="margin:auto;width:40%">
+
+<form id="payrollForm">
+  <br>
+  <label for="employeeName">Employee Name:</label>
+  <input class="w3-input w3-section w3-border" type="text" id="employeeName" required=""><br>
+
+  <label for="daysWorked">Days Worked:</label>
+  <input class="w3-input w3-section w3-border" type="number" id="daysWorked" required=""><br>
+
+  <label for="dailyRate">Daily Rate:</label>
+  <input class="w3-input w3-section w3-border" type="number" id="dailyRate" required=""><br>
+
+  <label for="deductionAmount">Deduction Amount:</label>
+  <input class="w3-input w3-section w3-border" type="number" id="deductionAmount" required=""><br>
+
+  <button type="button" id="addEmployee">Add Employee</button>
+</form>
+
+<div id="payrollTable"></div>
+
+<form id="deleteForm">
+  <label for="lineNumber">Enter Line Number to Delete:</label>
+  <br>
+  <input class="w3-input w3-section w3-border" type="number" id="lineNumber">
+  <button type="button" id="deleteEmployee">Delete Employee</button>
+</form>
+
+ 
+
+<script>
+
+  let payrollList = [];
+
+  function calculatePay(daysWorked, dailyRate, deductionAmount) {
+    const grossPay = daysWorked * dailyRate;
+    const netPay = grossPay - deductionAmount;
+    return { grossPay, netPay };
+  }
+
+  function displayPayrollTable() {
+    const tableDiv = document.getElementById('payrollTable');
+    tableDiv.innerHTML = "<h3>Payroll List</h3>";
+    const table = document.createElement('table');
+
+    const headerRow = table.insertRow(0);
+    headerRow.innerHTML = "<th>No.</th><th>Employee Name</th><th>Days Worked</th><th>Daily Rate</th><th>Gross Pay</th><th>Deduction Amount</th><th>Net Pay</th>";
+
+    payrollList.forEach((employee, index) => {
+      const { daysWorked, dailyRate, deductionAmount } = employee;
+      const { grossPay, netPay } = calculatePay(daysWorked, dailyRate, deductionAmount);
+
+      const row = table.insertRow(index + 1);
+      row.innerHTML = `<td>${index + 1}</td><td>${employee.name}</td>
+      <td>${daysWorked}</td><td>${dailyRate}</td><td>${grossPay}</td>
+      <td>${deductionAmount}</td><td>${netPay}</td>`;
+    });
+
+    tableDiv.appendChild(table);
+  }
+
+document.getElementById("addEmployee").addEventListener("click",
+  function addEmployee() {
+    const name = document.getElementById('employeeName').value;
+    const daysWorked = parseInt(document.getElementById('daysWorked').value);
+    const dailyRate = parseInt(document.getElementById('dailyRate').value);
+    const deductionAmount = parseInt(document.getElementById('deductionAmount').value);
+
+    payrollList.push({ name, daysWorked, dailyRate, deductionAmount });
+    displayPayrollTable();
+  });
+
+document.getElementById("deleteEmployee").addEventListener("click",
+  function deleteEmployee() {
+    const lineNumber = parseInt(document.getElementById('lineNumber').value);
+    
+    if (lineNumber >= 1 && lineNumber <= payrollList.length) {
+      payrollList.splice(lineNumber - 1, 1);
+      displayPayrollTable();
+    } else {
+      alert("Invalid line number.");
+    }
+  });
+</script>
+
+</body>
+</html>
