@@ -1,0 +1,183 @@
+ 
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+
+
+body,h1,h4,h3 {font-family: "Georgia";
+color: black;
+}
+body, html {height: 100%}
+.bgimg {
+  background-color: white;
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="index.html" class="w3-bar-item w3-button"><b>N's Home</b></a>
+    <div class="w3-right w3-hide-small">
+    <a href="Factorial.html" class="w3-bar-item w3-button">Factorial</a>
+    <a href="IncomeTax.html" class="w3-bar-item w3-button">Income Tax</a>
+    <a href="PayRoll.html" class="w3-bar-item w3-button">Pay Roll</a>
+    </div>
+  </div>
+</div>
+
+<div class="bgimg w3-display-container w3-text-white">
+  <div class="w3-display-middle w3-jumbo">
+    <img src="/images/Pink_Catculator.jpg" class="w3-center w3-image" alt="Photo of Me" width="300" height="300">
+  </div>
+ <div class="w3-display-topleft w3-container">
+  <br><br><br>
+  <p class="w3-large"><h4>This part of the website allows you to convert the following into:</h4></p>
+ </div>
+  <div class="w3-display-topleft w3-container w3-xlarge">
+    <br><br><br>
+    <p><button onclick="document.getElementById('CelsiustoFahrenheit').style.display='block'" class="w3-button w3-black">Celsius to Fahrenheit</button></p>
+    <p><button onclick="document.getElementById('FahrenheittoCelsius').style.display='block'" class="w3-button w3-black">Fahrenheit to Celsius</button></p>
+    <p><button onclick="document.getElementById('FeettoMeters').style.display='block'" class="w3-button w3-black">Feet to Meters</button></p>
+    <p><button onclick="document.getElementById('MeterstoFeet').style.display='block'" class="w3-button w3-black">Meters to Feet</button></p>
+  </div>
+
+<!-- Celsius to Fahrenheit -->
+<div id="CelsiustoFahrenheit" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+  <div class="w3-container w3-white w3-opacity w3-display-container">
+  <span onclick="document.getElementById('CelsiustoFahrenheit').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+  <div class="converter  w3-center">
+    <br><br>
+    <h1 class="w3-xx-large w3-animate-top">Celsius to Fahrenheit Converter</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    <br><br>
+    <h4><i>to convert Celsius to Fahrenheit</i></h4>
+    <label for="input"><h3><b>Enter Temperature :</b></h3></label>
+    <input type="number" id="celsiusInput" placeholder="converting C° to F°" oninput="convertCelsiusToFahrenheit()">
+    <p id="celsiusToFahrenheitResult">Result: </p>
+    <br><br><br><br>
+   </div>
+   </div>
+   </div>
+</div>
+  
+
+<!-- Fahrenheit to Celsius -->
+<div id="FahrenheittoCelsius" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+  <div class="w3-container w3-white w3-opacity w3-display-container">
+  <span onclick="document.getElementById('FahrenheittoCelsius').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+
+  <div class="converter  w3-center">
+    <br><br>
+    <h1 class="w3-xx-large w3-animate-top">Fahrenheit to Celsius Converter</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    <br><br>
+    <h4><i>to convert Fahrenheit to Celsius</i></h4>
+    <label for="input"><h3>Enter Temperature :</h3></label>
+    <input type="number" id="fahrenheitInput" placeholder="converting F° to C°" oninput="convertFahrenheitToCelsius()">
+    <p id="fahrenheitToCelsiusResult">Result: </p>
+    <br><br><br><br>
+  </div>
+  </div>
+  </div>
+</div>
+
+<!-- Feet to Meters -->
+<div id="FeettoMeters" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+  <div class="w3-container w3-white w3-opacity w3-display-container">
+  <span onclick="document.getElementById('FeettoMeters').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+
+  <div class="converter  w3-center">
+    <br><br>
+    <h1 class="w3-xx-large w3-animate-top">Feet to Meters</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    <br><br>
+    <h4><i>to convert Feet to Meters</i></h4>
+    <label for="input"><h3>Enter Length :</h3></label>
+    <input type="number" id="feetInput" placeholder="converting ft. to m" oninput="convertFeetToMeters()">
+    <p id="feetToMetersResult">Result: </p>
+    <br><br><br><br>
+  </div>
+  </div>
+  </div>
+</div>
+
+<!-- Meters to Feet -->
+<div id="MeterstoFeet" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+  <div class="w3-container w3-white w3-opacity w3-display-container">
+  <span onclick="document.getElementById('MeterstoFeet').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+
+  <div class="converter  w3-center">
+    <br><br>
+    <h1 class="w3-xx-large w3-animate-top">Meters to Feet</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    <br><br>
+    <h4><i>to convert Meters to Feet</i></h4>
+    <label for="input"><h3>Enter Length :</h3></label>
+    <input type="number" id="metersInput" placeholder="converting m to ft." oninput="convertMetersToFeet()">
+    <p id="metersToFeetResult">Result: </p>
+    <br><br><br><br>
+</div>
+
+
+
+
+
+<script>
+    function convertCelsiusToFahrenheit() {
+        var celsiusValue = document.getElementById("celsiusInput").value;
+        if (!isNaN(celsiusValue)) {
+            var fahrenheitValue = (celsiusValue * 9/5) + 32;
+            document.getElementById("celsiusToFahrenheitResult").innerText = "Result: " + fahrenheitValue.toFixed(2) + " °F";
+        } else {
+            document.getElementById("celsiusToFahrenheitResult").innerText = "Invalid input. Please enter a valid number.";
+        }
+    }
+
+    function convertFahrenheitToCelsius() {
+        var fahrenheitValue = document.getElementById("fahrenheitInput").value;
+        if (!isNaN(fahrenheitValue)) {
+            var celsiusValue = (fahrenheitValue - 32) * 5/9;
+            document.getElementById("fahrenheitToCelsiusResult").innerText = "Result: " + celsiusValue.toFixed(2) + " °C";
+        } else {
+            document.getElementById("fahrenheitToCelsiusResult").innerText = "Invalid input. Please enter a valid number.";
+        }
+    }
+
+    function convertMetersToFeet() {
+        var metersValue = document.getElementById("metersInput").value;
+        if (!isNaN(metersValue)) {
+            var feetValue = metersValue * 3.281;
+            document.getElementById("metersToFeetResult").innerText = "Result: " + feetValue.toFixed(2) + " feet";
+        } else {
+            document.getElementById("metersToFeetResult").innerText = "Invalid input. Please enter a valid number.";
+        }
+    }
+
+    function convertFeetToMeters() {
+        var feetValue = document.getElementById("feetInput").value;
+        if (!isNaN(feetValue)) {
+            var metersValue = feetValue / 3.281;
+            document.getElementById("feetToMetersResult").innerText = "Result: " + metersValue.toFixed(2) + " meters";
+        } else {
+            document.getElementById("feetToMetersResult").innerText = "Invalid input. Please enter a valid number.";
+        }
+    }
+</script>
+
+</body>
+</html>
