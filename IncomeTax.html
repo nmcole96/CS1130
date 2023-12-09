@@ -1,0 +1,90 @@
+ 
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+
+
+body,h1,h4,h3 {font-family: "Georgia";
+color: black;
+}
+body, html {height: 100%}
+.bgimg {
+  background-image: url('/images/Untitled_design_1_.jpg');
+  min-height: 100%;
+  background-position: center;
+  background-size: 88%;
+}
+</style>
+</head>
+
+<body>
+<!-- Nabar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="index.html" class="w3-bar-item w3-button"><b>N's Home</b></a>
+    <div class="w3-right w3-hide-small">
+    <a href="PayRoll.html" class="w3-bar-item w3-button">Pay Roll</a>
+    <a href="Converters.html" class="w3-bar-item w3-button">Converters</a>
+    <a href="Factorial.html" class="w3-bar-item w3-button">Factorial</a>
+    </div>
+  </div>
+</div>
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-black">
+  <div class="w3-display-topleft w3-padding-large w3-xlarge">
+
+  </div>
+  <div class="w3-display-middle">
+    <h1 class="w3-xx-large w3-animate-top">INCOME TAX CALCULATOR</h1>
+    <hr class="w3-border-white" style="margin:auto;width:40%">
+    <br><br>
+    <label for="numberInput"><h3>Net Taxable Income:</h3></label>
+    <input  opacity="0.5" type="text" id="net-income">
+    
+    <button onclick="calculateIncomeTax()">Calculate Factorial</button>
+    
+    <h4 id="result"></h4>
+    
+    
+    <br><br><br>
+   
+
+  <script>
+        function calculateIncomeTax() {
+            const netIncomeInput = document.getElementById('net-income');
+            const resultDisplay = document.getElementById('result');
+
+            const netIncome = parseFloat(netIncomeInput.value);
+
+            if (isNaN(netIncome)) {
+                window.alert('Not a valid number');
+                return;
+            }
+
+            let incomeTax;
+
+            if (netIncome <= 250000) {
+                incomeTax = 0;
+            } else if (netIncome <= 400000) {
+                incomeTax = 14000 + 0.2 * (netIncome - 250000);
+            } else if (netIncome <= 800000) {
+                incomeTax = 60000 + 0.25 * (netIncome - 400000);
+            } else if (netIncome <= 2000000) {
+                incomeTax = 169000 + 0.3 * (netIncome - 800000);
+            } else if (netIncome <= 8000000) {
+                incomeTax = 618000 + 0.32 * (netIncome - 2000000);
+            } else {
+                incomeTax = 3110000 + 0.35 * (netIncome - 8000000);
+            }
+
+            resultDisplay.textContent = `Income Tax: ${incomeTax.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
