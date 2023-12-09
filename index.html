@@ -1,20 +1,112 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.google.com/specimen/Vina+Sans">
 </head>
 <body>
 
-<h1 style="color:#7f70ac;">SVT Right Here!</h1>
-<h2>SVT Right Here!</h2>
-<h3 style="color:#beaded;">SVT Right Here!</h3>
-<h4>SVT Right Here!</h4>
-<h5 style="color:#e6ccff;">SVT Right Here!</h5>
-<h6>SVT Right Here!</h6>
-<p style="color:#C39BD3;">Choi Seung Cheol! Yoon Jeong Han! Hong Ji Soo! Moon Jun Hui!<br>
-Kwon Soon Young! Jeon Won Woo! Lee Ji Hoon! Lee Seok Min!<br>
-Kim Min Gyu! Xu Ming Hao! Boo Seng Kwan! Choi Han Sol!<br>
-Lee Chan!Seventeen!</p>
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button"><b>N's Home</b></a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="#about" class="w3-bar-item w3-button">About</a>
+      <a href="#projects" class="w3-bar-item w3-button">Projects</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+  <img class="w3-image" src="/images/ha.jpg" alt="Architecture" width="3000" height="200">
+  <div class="w3-display-middle w3-margin-top w3-center">
+    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>N's</b></span> <span class="w3-hide-small w3-text-light-grey">Awesome Webplace</span></h1>
+  </div>
+</header>
+
+<!-- Page content -->
+
+<!-- Project Section -->
+  <div class="w3-container w3-padding-64" id="projects">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Projects</h3>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+      <div class="w3-display-topleft w3-black w3-padding">
+      <a href="Converters.html">Converters</div>
+      <img src="/images/ew.jpg" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">
+        <a href="Factorial.html">Factorial</div>
+        <img src="/images/geh.jpg" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">
+        <a href="IncomeTax.html">Income Tax</div>
+        <img src="/images/gehh.jpg" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">
+        <a href="PayRoll.html">Payroll</div>
+        <img src="/images/eww.jpg" alt="House" style="width:100%">
+      </div>
+    </div>
+  </div>
+
+<!-- About Section -->
+  <div class="w3-col m6 w3-center w3-padding-32" id="about">
+  <br><br><br>
+      <img src="/images/meep.jpg" class="w3=center w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="180" height="100">
+      <p><b><i class="fa fa-user w3-margin-right"></i>Nathalie Cole</b></p>
+      <p class="w3-opacity w3-center">Website Owner & Designer</p><br>
+      <p class="w3-opacity w3-center">from InTec 1-B</p><br>
+    </div>
+
+    <!-- Hide this text on small devices -->
+    <div class="w3-col m6 w3-hide-small w3-padding-large">
+      <br><br><br>
+      <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About</h3>
+      <p><h3>Woah,you're here!</h3></p>
+      <p>Welcome to <b><i>N's Awesome Webplace--my website!</b></i> This website is designed strictly for calculations purposes only, 
+      and what I meant by calculations is <b>calculators!</b> These calculators ranges from the conversion of
+      Celsius to Fahrenheit, Fahrenheit to Celsius, Feet to Meters, Meters to Feet, to computations of Factorials, Income Tax,and Payrolls!
+      <br><br>
+      Interested in exploring the mentioned calculators? Then click <b>Projects</b>, located at the upper corner of the 
+      navigation bar.</p>
+      <p><h4><b><i>Hope you'll enjoy! Adios!</b></i></h4></p>
+    <br><br><br>
+    </div>
+
+  
+<!-- Image of location/map -->
+
+<div class="w3-container">
+  <img src="/images/" class="w3-image w3-display-bottom-right" style=width="50" height="50">
+</div>
+
+<!-- End page content -->
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  <a href="#" class="w3-button w3-black w3-padding-large w3-margin-bottom"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
 
 </body>
 </html>
